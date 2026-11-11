@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const menuOpen = ref(false)
 const selectedCert = ref(null)
 
 // Certification Data
@@ -72,60 +71,6 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <!-- Navigation Bar -->
-    <header class="navbar">
-      <NuxtLink to="/" class="logo" @click="menuOpen = false">
-        <span class="logo-text">LDC</span>
-      </NuxtLink>
-
-      <input
-        id="menu-toggle"
-        v-model="menuOpen"
-        type="checkbox"
-        class="menu-toggle"
-      />
-
-      <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <nav class="nav-links">
-        <ul>
-          <li>
-            <NuxtLink to="/" active-class="active" @click="menuOpen = false">
-              Home
-            </NuxtLink>
-          </li>
-
-          <li>
-            <NuxtLink to="/about" active-class="active" @click="menuOpen = false">
-              About Me
-            </NuxtLink>
-          </li>
-
-          <li>
-            <NuxtLink to="/tech-stack" active-class="active" @click="menuOpen = false">
-              Tech Stack
-            </NuxtLink>
-          </li>
-
-          <li>
-            <NuxtLink to="/certifications" active-class="active" @click="menuOpen = false">
-              Certifications
-            </NuxtLink>
-          </li>
-
-          <li>
-            <NuxtLink to="/contact" active-class="active" @click="menuOpen = false">
-              Contact
-            </NuxtLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
     <!-- Certifications Section -->
     <main class="hero-section page-section">
       <div class="hero-content page-content">
