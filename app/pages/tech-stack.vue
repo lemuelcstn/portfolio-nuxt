@@ -99,26 +99,12 @@ const techCategories = [
             </h2>
 
             <div class="tech-grid">
-
               <!-- Technology Cards -->
-              <div
+              <TechCard
                 v-for="tech in category.items"
                 :key="tech.name"
-                class="tech-card"
-              >
-                <img
-                  :src="tech.image"
-                  :alt="tech.name"
-                  loading="lazy"
-                  class="tech-icon"
-                  :class="{ 'bg-transparent': tech.transparent }"
-                />
-
-                <span class="tech-name">
-                  {{ tech.name }}
-                </span>
-              </div>
-
+                :tech="tech"
+              />
             </div>
           </div>
 

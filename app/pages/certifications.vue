@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 const selectedCert = ref(null)
 
@@ -52,21 +52,6 @@ const openModal = (cert) => {
 const closeModal = () => {
   selectedCert.value = null
 }
-
-// Close Modal Using Escape Key
-const handleEscape = (event) => {
-  if (event.key === 'Escape') {
-    closeModal()
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', handleEscape)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleEscape)
-})
 </script>
 
 <template>
@@ -74,90 +59,24 @@ onUnmounted(() => {
     <!-- Certifications Section -->
     <main class="hero-section page-section">
       <div class="hero-content page-content">
-
         <PageHeading title="Certifications" />
 
         <!-- Certification Cards -->
         <div class="certifications-container">
-          <button
+          <CertCard
             v-for="cert in certifications"
             :key="cert.title"
-            type="button"
-            @click="openModal(cert)"
-            class="cert-card"
-          >
-            <img
-              :src="cert.badge"
-              :alt="cert.title + ' Badge'"
-              loading="lazy"
-              class="cert-badge"
-            />
-
-            <h3 class="cert-title">
-              {{ cert.title }}
-            </h3>
-
-            <span
-              class="cert-btn"
-              :style="{ backgroundColor: cert.color }"
-            >
-              View Details
-            </span>
-          </button>
+            :cert="cert"
+            @select="openModal"
+          />
         </div>
-
       </div>
     </main>
 
     <!-- Certification Modal -->
-    <div
-      v-if="selectedCert"
-      class="modal-overlay"
-      @click.self="closeModal"
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        :aria-label="selectedCert.title"
-        class="modal-dialog"
-      >
-        <!-- Close Button -->
-        <button
-          type="button"
-          @click="closeModal"
-          class="modal-close"
-          aria-label="Close modal"
-        >
-          &times;
-        </button>
-
-        <!-- Certificate Image -->
-        <img
-          :src="selectedCert.image"
-          :alt="selectedCert.title"
-          class="modal-image"
-        />
-
-        <!-- Certificate Information -->
-        <h2 class="modal-title">
-          {{ selectedCert.title }}
-        </h2>
-
-        <p class="modal-description">
-          {{ selectedCert.description }}
-        </p>
-
-        <!-- Credly Link -->
-        <a
-          :href="selectedCert.link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="modal-verify-btn"
-        >
-          Verify Certificate
-        </a>
-      </div>
-    </div>
-
+    <CertModal
+      :cert="selectedCert"
+      @close="closeModal"
+    />
   </div>
 </template>
