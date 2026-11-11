@@ -4,9 +4,7 @@
     <main class="hero-section page-section">
       <div class="hero-content page-content">
 
-        <h1 class="hero-title">
-          <span class="highlight">About Me</span>
-        </h1>
+        <PageHeading title="About Me" />
 
         <div class="content-box">
           <p>

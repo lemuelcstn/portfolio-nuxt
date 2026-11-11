@@ -84,9 +84,7 @@ const techCategories = [
     <main class="hero-section page-section">
       <div class="hero-content page-content">
 
-        <h1 class="hero-title">
-          <span class="highlight">Tech Stack</span>
-        </h1>
+        <PageHeading title="Tech Stack" />
 
         <div class="tech-container">
 
