@@ -127,39 +127,35 @@ onUnmounted(() => {
     </header>
 
     <!-- Certifications Section -->
-    <main class="hero-section">
-      <div class="hero-content max-w-[800px] mx-auto text-center">
+    <main class="hero-section page-section">
+      <div class="hero-content page-content">
 
         <h1 class="hero-title">
           <span class="highlight">Certifications</span>
         </h1>
 
         <!-- Certification Cards -->
-        <div
-          class="certifications-container grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 mt-12"
-        >
+        <div class="certifications-container">
           <button
             v-for="cert in certifications"
             :key="cert.title"
             type="button"
             @click="openModal(cert)"
-            class="group cursor-pointer flex flex-col items-center gap-6 p-8 bg-circle rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,123,255,0.15)]"
+            class="cert-card"
           >
             <img
               :src="cert.badge"
               :alt="cert.title + ' Badge'"
               loading="lazy"
-              class="max-w-[180px] h-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)] pointer-events-none"
+              class="cert-badge"
             />
 
-            <h3
-              class="text-main font-semibold text-lg text-center transition-colors duration-300 group-hover:text-primary"
-            >
+            <h3 class="cert-title">
               {{ cert.title }}
             </h3>
 
             <span
-              class="inline-block py-[0.8rem] px-[1.8rem] text-white rounded-[30px] font-semibold text-base transition-all duration-300 pointer-events-none group-hover:scale-105"
+              class="cert-btn"
               :style="{ backgroundColor: cert.color }"
             >
               View Details
@@ -173,20 +169,20 @@ onUnmounted(() => {
     <!-- Certification Modal -->
     <div
       v-if="selectedCert"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      class="modal-overlay"
       @click.self="closeModal"
     >
       <div
         role="dialog"
         aria-modal="true"
         :aria-label="selectedCert.title"
-        class="relative w-full max-w-lg rounded-[24px] bg-white p-8 text-center shadow-2xl"
+        class="modal-dialog"
       >
         <!-- Close Button -->
         <button
           type="button"
           @click="closeModal"
-          class="absolute right-5 top-4 text-2xl text-gray-500 hover:text-black"
+          class="modal-close"
           aria-label="Close modal"
         >
           &times;
@@ -196,15 +192,15 @@ onUnmounted(() => {
         <img
           :src="selectedCert.image"
           :alt="selectedCert.title"
-          class="mx-auto mb-6 max-h-[300px] w-full object-contain"
+          class="modal-image"
         />
 
         <!-- Certificate Information -->
-        <h2 class="mb-4 text-xl font-bold text-gray-800">
+        <h2 class="modal-title">
           {{ selectedCert.title }}
         </h2>
 
-        <p class="mb-6 text-gray-600">
+        <p class="modal-description">
           {{ selectedCert.description }}
         </p>
 
@@ -213,7 +209,7 @@ onUnmounted(() => {
           :href="selectedCert.link"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block rounded-[30px] bg-[#007bff] px-7 py-3 font-semibold text-white transition hover:bg-[#0056b3]"
+          class="modal-verify-btn"
         >
           Verify Certificate
         </a>

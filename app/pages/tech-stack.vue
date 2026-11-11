@@ -7,7 +7,6 @@ const menuOpen = ref(false)
 const techCategories = [
   {
     title: 'Languages',
-    spacing: '',
     items: [
       {
         name: 'Java',
@@ -34,7 +33,6 @@ const techCategories = [
 
   {
     title: 'Databases',
-    spacing: 'mt-12',
     items: [
       {
         name: 'MySQL',
@@ -57,7 +55,6 @@ const techCategories = [
 
   {
     title: 'Tools',
-    spacing: 'mt-12',
     items: [
       {
         name: 'Git',
@@ -142,43 +139,42 @@ const techCategories = [
     </header>
 
     <!-- Tech Stack Section -->
-    <main class="hero-section">
-      <div class="hero-content max-w-[800px] mx-auto text-center">
+    <main class="hero-section page-section">
+      <div class="hero-content page-content">
 
         <h1 class="hero-title">
           <span class="highlight">Tech Stack</span>
         </h1>
 
-        <div class="tech-container mt-12 text-center">
+        <div class="tech-container">
 
           <!-- Technology Categories -->
           <div
             v-for="category in techCategories"
             :key="category.title"
             class="tech-category"
-            :class="category.spacing"
           >
-            <h2 class="tech-category-title text-main text-2xl font-bold mb-6">
+            <h2 class="tech-category-title">
               {{ category.title }}
             </h2>
 
-            <div class="tech-grid flex flex-wrap justify-center gap-4">
+            <div class="tech-grid">
 
               <!-- Technology Cards -->
               <div
                 v-for="tech in category.items"
                 :key="tech.name"
-                class="tech-card flex items-center gap-3 bg-circle py-2.5 pr-5 pl-2.5 rounded-2xl border border-black/5 transition-transform duration-200 hover:-translate-y-1"
+                class="tech-card"
               >
                 <img
                   :src="tech.image"
                   :alt="tech.name"
                   loading="lazy"
-                  class="tech-icon w-[46px] h-[46px] rounded-xl object-contain"
+                  class="tech-icon"
                   :class="{ 'bg-transparent': tech.transparent }"
                 />
 
-                <span class="tech-name text-main font-semibold text-base pr-2">
+                <span class="tech-name">
                   {{ tech.name }}
                 </span>
               </div>

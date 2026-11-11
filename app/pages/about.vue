@@ -61,8 +61,8 @@ const menuOpen = ref(false)
     </header>
 
     <!-- About Me Section -->
-    <main class="hero-section">
-      <div class="hero-content max-w-[800px] mx-auto text-center">
+    <main class="hero-section page-section">
+      <div class="hero-content page-content">
 
         <h1 class="hero-title">
           <span class="highlight">About Me</span>

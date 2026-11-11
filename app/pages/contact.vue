@@ -61,14 +61,14 @@ const menuOpen = ref(false)
     </header>
 
     <!-- Contact Section -->
-    <main class="hero-section">
-      <div class="hero-content max-w-[800px] mx-auto text-center">
+    <main class="hero-section page-section">
+      <div class="hero-content page-content">
 
         <h1 class="hero-title">
           <span class="highlight">Contact</span>
         </h1>
 
-        <div class="content-box text-center">
+        <div class="content-box contact-box">
           <p>
             Feel free to contact me if you have any questions, opportunities,
             or would like to connect. I am always open to learning,
@@ -76,7 +76,7 @@ const menuOpen = ref(false)
           </p>
 
           <!-- Social Media Buttons -->
-          <div class="hero-buttons mt-[30px] mb-0 justify-center">
+          <div class="hero-buttons contact-buttons">
 
             <!-- GitHub -->
             <a
