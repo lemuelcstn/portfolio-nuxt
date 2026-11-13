@@ -4,21 +4,20 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  linkedinClass: {
-    type: String,
-    default: 'btn-text',
-  },
 })
 </script>
 
 <template>
-  <div class="hero-buttons" :class="{ 'contact-buttons': centered }">
+  <div
+    class="flex flex-wrap items-center gap-2.5 sm:gap-4"
+    :class="centered ? 'justify-center mt-6 lg:mt-[30px] mb-0' : 'justify-center lg:justify-start mb-5 lg:mb-[60px]'"
+  >
     <!-- GitHub -->
     <a
       href="https://github.com/lemuelcstn"
       target="_blank"
       rel="noopener noreferrer"
-      class="btn btn-secondary"
+      class="btn btn-outline btn-primary h-auto py-3 px-5 sm:py-3.5 sm:px-7 rounded-lg font-semibold text-sm sm:text-base gap-2"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +42,7 @@ defineProps({
       href="https://www.linkedin.com/in/lemuel-custan-5240b1270/?skipRedirect=true"
       target="_blank"
       rel="noopener noreferrer"
-      class="btn"
-      :class="linkedinClass"
+      class="btn btn-primary h-auto py-3 px-5 sm:py-3.5 sm:px-7 rounded-lg font-semibold text-sm sm:text-base gap-2 shadow-md transition-all duration-300 hover:-translate-y-0.5"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -67,4 +65,3 @@ defineProps({
     </a>
   </div>
 </template>
-
