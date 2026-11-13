@@ -1,3 +1,29 @@
+<script setup>
+const siteUrl = useRuntimeConfig().public.siteUrl
+const pageTitle = 'Contact | Lemuel Custan'
+const pageDescription =
+  'Connect with Lemuel Custan on GitHub and LinkedIn for questions, web development opportunities, or collaboration. Always open to learning and connecting.'
+
+useHead({
+  title: pageTitle,
+})
+
+useSeoMeta({
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/contact`,
+  ogImage: `${siteUrl}/Image/lemuel.jpg`,
+  ogImageAlt: 'Lemuel Custan',
+  ogSiteName: 'Lemuel Custan Portfolio',
+  twitterCard: 'summary',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${siteUrl}/Image/lemuel.jpg`,
+})
+</script>
+
 <template>
   <div>
     <!-- Contact Section -->

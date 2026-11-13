@@ -1,3 +1,29 @@
+<script setup>
+const siteUrl = useRuntimeConfig().public.siteUrl
+const pageTitle = 'About Me | Lemuel Custan'
+const pageDescription =
+  'Learn about Lemuel Custan, an aspiring web developer passionate about responsive websites, problem-solving, astronomy, and youth ministry leadership.'
+
+useHead({
+  title: pageTitle,
+})
+
+useSeoMeta({
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/about`,
+  ogImage: `${siteUrl}/Image/lemuel.jpg`,
+  ogImageAlt: 'Lemuel Custan',
+  ogSiteName: 'Lemuel Custan Portfolio',
+  twitterCard: 'summary',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${siteUrl}/Image/lemuel.jpg`,
+})
+</script>
+
 <template>
   <div>
     <!-- About Me Section -->

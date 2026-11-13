@@ -1,4 +1,28 @@
 <script setup>
+const siteUrl = useRuntimeConfig().public.siteUrl
+const pageTitle = 'Tech Stack | Lemuel Custan'
+const pageDescription =
+  'Explore the languages, databases, and developer tools used by Lemuel Custan, including Java, Python, HTML, CSS, JavaScript, MySQL, PostgreSQL, and Git.'
+
+useHead({
+  title: pageTitle,
+})
+
+useSeoMeta({
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/tech-stack`,
+  ogImage: `${siteUrl}/Image/lemuel.jpg`,
+  ogImageAlt: 'Lemuel Custan',
+  ogSiteName: 'Lemuel Custan Portfolio',
+  twitterCard: 'summary',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${siteUrl}/Image/lemuel.jpg`,
+})
+
 // Tech Stack Data
 const techCategories = [
   {

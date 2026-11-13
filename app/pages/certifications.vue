@@ -1,6 +1,30 @@
 <script setup>
 import { ref } from 'vue'
 
+const siteUrl = useRuntimeConfig().public.siteUrl
+const pageTitle = 'Certifications | Lemuel Custan'
+const pageDescription =
+  'View certifications earned by Lemuel Custan in Microsoft Word, Microsoft PowerPoint, Networking Basics, and Python Essentials 1 with Credly verification.'
+
+useHead({
+  title: pageTitle,
+})
+
+useSeoMeta({
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  ogUrl: `${siteUrl}/certifications`,
+  ogImage: `${siteUrl}/Image/lemuel.jpg`,
+  ogImageAlt: 'Lemuel Custan',
+  ogSiteName: 'Lemuel Custan Portfolio',
+  twitterCard: 'summary',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: `${siteUrl}/Image/lemuel.jpg`,
+})
+
 const selectedCert = ref(null)
 
 // Certification Data
