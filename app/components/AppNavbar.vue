@@ -15,24 +15,28 @@ const closeDropdown = () => {
 </script>
 
 <template>
-  <header class="navbar max-w-[1400px] mx-auto px-[5%] py-4 sm:py-5 relative z-[100]">
-    <div class="navbar-start">
+  <header class="navbar flex items-center justify-between max-w-[1400px] mx-auto px-[5%] py-4 sm:py-5 relative z-[100]">
+    <!-- Logo -->
+    <div class="flex-1">
       <NuxtLink
         to="/"
-        class="flex items-center gap-3 text-[1.7rem] sm:text-[2rem] font-bold text-base-content"
+        class="inline-flex items-center gap-3 text-[1.7rem] sm:text-[2rem] font-bold text-base-content rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       >
         <span>LDC</span>
       </NuxtLink>
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="navbar-end hidden lg:flex w-auto">
-      <ul class="menu menu-horizontal items-center gap-8 p-0">
+    <!-- Desktop Pill Tab Bar (md and up) -->
+    <nav
+      aria-label="Main navigation"
+      class="hidden md:flex flex-none"
+    >
+      <ul class="menu menu-horizontal flex-nowrap items-center gap-1 rounded-full bg-base-200 p-1.5 shadow-sm">
         <li v-for="item in navItems" :key="item.to">
           <NuxtLink
             :to="item.to"
-            exact-active-class="text-primary bg-accent/10"
-            class="px-4 py-2 rounded-lg text-[0.95rem] font-medium text-neutral transition-all duration-300 hover:text-primary hover:bg-accent/5"
+            exact-active-class="bg-primary !text-primary-content shadow-sm hover:!bg-primary focus:!bg-primary focus:!text-primary-content"
+            class="rounded-full px-4 lg:px-5 py-2 text-sm lg:text-[0.95rem] font-medium whitespace-nowrap text-neutral transition-colors duration-300 hover:bg-base-300 hover:text-base-content focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {{ item.label }}
           </NuxtLink>
@@ -40,14 +44,14 @@ const closeDropdown = () => {
       </ul>
     </nav>
 
-    <!-- Mobile Dropdown Navigation -->
-    <div class="navbar-end lg:hidden w-auto">
+    <!-- Mobile Dropdown Navigation (below md) -->
+    <div class="flex-none md:hidden">
       <div class="dropdown dropdown-end">
         <button
           type="button"
           tabindex="0"
           aria-label="Open navigation menu"
-          class="btn btn-ghost btn-square text-base-content hover:text-primary"
+          class="btn btn-ghost btn-square rounded-full text-base-content hover:bg-base-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,13 +71,13 @@ const closeDropdown = () => {
 
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[100] p-3 shadow-lg bg-base-100 rounded-2xl w-56 gap-1"
+          class="menu menu-sm dropdown-content mt-3 z-[100] p-2.5 shadow-lg bg-base-200 border border-base-300 rounded-3xl w-56 gap-1.5"
         >
           <li v-for="item in navItems" :key="item.to">
             <NuxtLink
               :to="item.to"
-              exact-active-class="text-primary bg-accent/10"
-              class="px-4 py-2 rounded-lg text-[0.95rem] font-medium text-neutral transition-all duration-300 hover:text-primary hover:bg-accent/5"
+              exact-active-class="bg-primary !text-primary-content shadow-sm hover:!bg-primary focus:!bg-primary focus:!text-primary-content"
+              class="rounded-full px-4 py-2.5 text-[0.95rem] font-medium text-neutral transition-colors duration-300 hover:bg-base-300 hover:text-base-content focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               @click="closeDropdown"
             >
               {{ item.label }}
