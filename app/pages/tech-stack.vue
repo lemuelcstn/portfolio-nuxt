@@ -81,24 +81,24 @@ const techCategories = [
 <template>
   <div>
     <!-- Tech Stack Section -->
-    <main class="hero-section page-section">
-      <div class="hero-content page-content">
+    <main class="flex flex-col items-center justify-center px-[5%] py-5 lg:py-[60px] max-w-[1400px] mx-auto min-h-[calc(100vh-80px)]">
+      <div class="w-full max-w-[800px] mx-auto text-center z-10">
 
         <PageHeading title="Tech Stack" />
 
-        <div class="tech-container">
+        <div class="w-full mt-12 text-center space-y-12">
 
           <!-- Technology Categories -->
           <div
             v-for="category in techCategories"
             :key="category.title"
-            class="tech-category"
+            class="w-full"
           >
-            <h2 class="tech-category-title">
+            <h2 class="text-base-content text-2xl font-bold mb-6">
               {{ category.title }}
             </h2>
 
-            <div class="tech-grid">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 w-full">
               <!-- Technology Cards -->
               <TechCard
                 v-for="tech in category.items"

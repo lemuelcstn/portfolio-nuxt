@@ -42,6 +42,7 @@
 @theme {
   --font-sans: "Inter", sans-serif;
   --color-muted: #4f566b;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 @layer base {
@@ -59,5 +60,29 @@
     color: var(--color-base-content);
     line-height: 1.6;
     overflow-x: hidden;
+  }
+}
+
+/* Floating animation for hero technology badges */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
