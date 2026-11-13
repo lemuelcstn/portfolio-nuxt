@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-base-200 rounded-2xl lg:rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] mt-6 lg:mt-10 text-left">
+  <div class="card bg-base-200 rounded-2xl lg:rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] mt-6 lg:mt-10 text-left transition-all duration-300 motion-safe:hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
     <div class="card-body p-5 sm:p-6 lg:p-10 gap-5">
       <p class="text-neutral text-[0.9rem] sm:text-[0.95rem] lg:text-[1.1rem] leading-[1.8]">
         I am Lemuel Custan, an aspiring web developer who enjoys

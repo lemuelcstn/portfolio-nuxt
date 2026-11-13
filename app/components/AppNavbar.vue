@@ -71,7 +71,7 @@ const closeDropdown = () => {
 
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[100] p-2.5 shadow-lg bg-base-200 border border-base-300 rounded-3xl w-56 gap-1.5"
+          class="menu menu-sm dropdown-content mt-3 z-[100] p-2.5 shadow-lg bg-base-100/25 backdrop-blur-md border border-base-300/40 rounded-3xl w-56 gap-1.5"
         >
           <li v-for="item in navItems" :key="item.to">
             <NuxtLink

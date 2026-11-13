@@ -31,7 +31,7 @@ useSeoMeta({
       <div class="w-full max-w-[800px] mx-auto text-center z-10">
         <PageHeading title="Contact" />
 
-        <div class="card bg-base-200 rounded-2xl lg:rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] mt-6 lg:mt-10">
+        <div class="card bg-base-200 rounded-2xl lg:rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] mt-6 lg:mt-10 transition-all duration-300 motion-safe:hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
           <div class="card-body p-5 sm:p-6 lg:p-10 text-center items-center">
             <p class="text-neutral text-[0.9rem] sm:text-[0.95rem] lg:text-[1.1rem] leading-[1.8]">
               Feel free to contact me if you have any questions, opportunities,
